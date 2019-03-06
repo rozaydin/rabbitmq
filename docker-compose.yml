@@ -8,12 +8,21 @@ networks:
 services:
     r1:
         build: .
+        container_name: r1
+        hostname: r1
+        ports:
+         - "1883:1883"          
+         - "15672:15672"
         networks:
             rabbitcluster:
                 aliases:
                     - r1
     r2:
         build: .
+        container_name: r2
+        hostname: r2
+        ports:
+         - "1884:1883"
         networks:            
             rabbitcluster:
                 aliases:
@@ -22,6 +31,10 @@ services:
             - r1
     r3:
         build: .
+        container_name: r3
+        hostname: r3
+        ports:
+         - "1885:1883"
         networks:
             rabbitcluster:
                 aliases:
