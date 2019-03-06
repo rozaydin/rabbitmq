@@ -1,0 +1,30 @@
+version: '3.7'
+
+networks:
+  rabbitcluster:  
+    external:
+      name: rabbit-cluster
+
+services:
+    r1:
+        build: .
+        networks:
+            rabbitcluster:
+                aliases:
+                    - r1
+    r2:
+        build: .
+        networks:            
+            rabbitcluster:
+                aliases:
+                    - r2
+        depends_on:
+            - r1
+    r3:
+        build: .
+        networks:
+            rabbitcluster:
+                aliases:
+                    - r3
+        depends_on:
+            - r1    
