@@ -1,0 +1,20 @@
+{
+  "name": "auth-server",
+  "version": "1.0.0",
+  "description": "rabbitmq testing environment contains http_auth_backend server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "auth-server"
+  ],
+  "author": "rozaydin",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.0"
+  }
+}

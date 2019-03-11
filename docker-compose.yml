@@ -1,11 +1,21 @@
 version: '3.7'
-
 networks:
   rabbitcluster:  
     external:
       name: rabbit-cluster
 
 services:
+
+    authserver:
+        build: ./auth-server/.
+        container_name: authserver
+        hostname: authserver
+        ports:
+         - "7070:7070"    
+        networks:
+            rabbitcluster:
+                aliases:
+                    - authserver 
     r1:
         build: .
         container_name: r1

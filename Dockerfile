@@ -23,7 +23,7 @@ EXPOSE 5672/tcp
 EXPOSE 15675/tcp
 
 # upload rabbitmq configuration
-COPY --chown=root ./rabbitmq.conf_1 /etc/rabbitmq/rabbitmq.conf
+COPY --chown=root ./rabbitmq.conf /etc/rabbitmq/rabbitmq.conf
 # RUN dos2unix /etc/rabbitmq/rabbitmq.conf
 
 # RUN echo 'vm_memory_high_watermark.relative = 0.7' >> /etc/rabbitmq/rabbitmq.conf
